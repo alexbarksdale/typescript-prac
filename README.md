@@ -17,3 +17,7 @@ Abstract:
 -  Sets up a contract between different classes
 -  Use when we are trying to build up a definition of an object
 -  Strongly couples classes together
+
+# Enums
+- A way to group very similar values
+
