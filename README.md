@@ -21,3 +21,7 @@ Abstract:
 # Enums
 - A way to group very similar values
 
+# Generics
+- Like functions arguments, but for types in class/function definitions
+- Allows us to define the type of a property/argument/return value at a future point
+- Used heavily when writing reusable code
