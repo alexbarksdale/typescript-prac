@@ -7,7 +7,6 @@
 - Can make child classes promise to implement some other method ^
 
 # Interfaces vs Abstract
-
 Interfaces:
 -  Sets up a contract between different classes
 -  Use when we have very different objects that we want to work together
@@ -25,3 +24,7 @@ Abstract:
 - Like functions arguments, but for types in class/function definitions
 - Allows us to define the type of a property/argument/return value at a future point
 - Used heavily when writing reusable code
+
+# Picking Inheritance vs Composition
+- Inheritance: Characterized by an 'is a' relationship between two classes
+- Composition: Characterized by a 'has a' relationship between two classes
