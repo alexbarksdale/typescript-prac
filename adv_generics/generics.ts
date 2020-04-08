@@ -26,7 +26,9 @@ class ArrayOfAnything<T> {
 
 new ArrayOfAnything<string>(['a', 'b', 'c']);
 
-// Example of generics with functions
+/*========================================*/
+/*Example of generics with functions*/
+/*========================================*/
 
 // Bad
 function printStrings(arr: string[]): void {
@@ -49,3 +51,32 @@ function printAnything<T>(arr: T[]): void {
 }
 
 printAnything<string>(['a', 'b', 'c']);
+
+/*========================================*/
+/*Generic Contraints*/
+/*========================================*/
+
+class Car {
+    print() {
+        console.log('Car');
+    }
+}
+
+class House {
+    print() {
+        console.log('house');
+    }
+}
+
+interface Printable {
+    print(): void;
+}
+
+function printHousesOrCars<T extends Printable>(arr: T[]): void {
+    for (let i = 0; i < arr.length; i += 1) {
+        arr[i].print();
+    }
+}
+
+printHousesOrCars<House>([new House(), new House()]);
+printHousesOrCars<Car>([new Car(), new Car()]);
