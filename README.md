@@ -28,3 +28,9 @@ Abstract:
 # Picking Inheritance vs Composition
 - Inheritance: Characterized by an 'is a' relationship between two classes
 - Composition: Characterized by a 'has a' relationship between two classes
+
+# MISC
+- Strings can be types
+     - Example: type Name = 'name'
+     - Redux is a great place to use this
+     - In JS, all object keys are strings
