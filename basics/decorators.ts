@@ -5,22 +5,24 @@ class Boat {
         return `This boat's color is ${this.color}`;
     }
 
-    @logError
+    @logError('Boat went down')
     pilot(): void {
         throw new Error();
-        console.log('Swish');
     }
 }
 
-function logError(target: any, key: string, desc: PropertyDescriptor): void {
-    const method = desc.value;
+// Known as Decorator Factory
+function logError(errorMsg: string) {
+    return function (target: any, key: string, desc: PropertyDescriptor): void {
+        const method = desc.value;
 
-    desc.value = function () {
-        try {
-            method();
-        } catch (err) {
-            console.log('Oop');
-        }
+        desc.value = function () {
+            try {
+                method();
+            } catch (err) {
+                console.log(errorMsg);
+            }
+        };
     };
 }
 
