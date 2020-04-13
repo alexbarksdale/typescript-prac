@@ -1,14 +1,33 @@
+@classDecorator
 class Boat {
+    @testDecorator
     color: string = 'red';
 
+    @testDecorator
     get formattedColor(): string {
         return `This boat's color is ${this.color}`;
     }
 
     @logError('Boat went down')
-    pilot(): void {
-        throw new Error();
+    pilot(@paramDecorator speed: string): void {
+        if (speed === 'fast') {
+            console.log('Swish');
+        } else {
+            console.log('Not moving');
+        }
     }
+}
+
+function classDecorator(constructor: typeof Boat) {
+    console.log(constructor);
+}
+
+function paramDecorator(target: any, key: string, index: number) {
+    console.log(key, index);
+}
+
+function testDecorator(target: any, key: string) {
+    console.log(key);
 }
 
 // Known as Decorator Factory
@@ -26,4 +45,4 @@ function logError(errorMsg: string) {
     };
 }
 
-new Boat().pilot();
+new Boat().color;
