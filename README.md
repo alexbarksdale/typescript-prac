@@ -34,3 +34,10 @@ Abstract:
      - Example: type Name = 'name'
      - Redux is a great place to use this
      - In JS, all object keys are strings
+
+# Decorators
+- First argument is the prototype of the object
+- Second argument is the key of the property/method/accessor on the object
+- Third argument is the property descriptor
+- Decorators are applied when the code for this class is ran. Not when an 
+instance is created
